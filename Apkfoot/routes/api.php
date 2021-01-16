@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/users', function (Request $request) {
     return $request->user();
+});
+Route::get('/user/{id}', function (Request $request) {
+    return User::where('id',$request['id'])->get();
+});
+Route::get('/user', function (Request $request) {
+  return User::get();
+});
+Route::get('/user', function (Request $request) {
+  return User::get();
 });
 
 
