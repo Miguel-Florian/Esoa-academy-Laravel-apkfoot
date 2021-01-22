@@ -14,7 +14,8 @@ class CreateRecettesTable extends Migration
     public function up()
     {
         Schema::create('recettes', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->float('Prix');
             $table->Date('date');
             $table->timestamps();
         });

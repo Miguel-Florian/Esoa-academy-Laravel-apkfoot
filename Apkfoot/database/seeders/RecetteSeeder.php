@@ -13,6 +13,11 @@ class RecetteSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Recette::factory(10)->create(
+            [
+                'Prix'=>10000,
+                'date'=>now(),
+            ],
+        );
     }
 }

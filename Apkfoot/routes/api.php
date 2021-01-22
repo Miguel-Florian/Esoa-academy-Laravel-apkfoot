@@ -29,7 +29,8 @@ Route::get('/user/{id}','App\Http\Controllers\UserController@userById');
 
 // Requette concernant les recettes
 Route::get('/recette', [RecetteController::class, 'recette']);
+Route::get('/recetteByDate/{Date}',[RecetteController::class, 'recetteByDate']);
 Route::post('/recette', [RecetteController::class, 'add']);
 Route::put('/recette', [RecetteController::class, 'update']);
-Route::get('/recetteByDate/{date}',[RecetteController::class, 'recetteByDate'] );
+
 

@@ -22,7 +22,8 @@ class RecetteFactory extends Factory
     public function definition()
     {
         return [
-            //
+                'Prix'=>$this->faker->Prix,
+                'date'=>$this->faker->date,
         ];
     }
 }

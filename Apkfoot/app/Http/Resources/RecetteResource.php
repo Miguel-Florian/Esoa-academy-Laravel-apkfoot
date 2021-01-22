@@ -17,17 +17,17 @@ class RecetteResource extends JsonResource
       //  return parent::toArray($request);
          return [
             'id' => $this->id,
-            'name' => $this->name,
-            'email' =>$this->email,
+            'Prix' => $this->Prix,
+            'date' =>$this->date,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
     }
-        public function name($request)
+       /* public function name($request)
     {
       //  return parent::toArray($request);
          return [
             'name' => $this->name,
         ];
-    }
+    }*/
 }
