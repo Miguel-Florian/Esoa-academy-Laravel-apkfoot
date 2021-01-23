@@ -7,6 +7,10 @@ use App\Models\User;
 use App\Models\Recette;
 use App\Http\Resources\RecetteResource;
 use App\Http\Controllers\RecetteController;
+
+use App\Models\Depense;
+use App\Http\Resources\DepenseResource;
+use App\Http\Controllers\DepenseController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,4 +37,8 @@ Route::get('/recetteByDate/{Date}',[RecetteController::class, 'recetteByDate']);
 Route::post('/recette', [RecetteController::class, 'add']);
 Route::put('/recette', [RecetteController::class, 'update']);
 
-
+//Requete concernant les depenses
+Route::get('/depense',[DepenseController::class,'depense']);
+Route::get('/depenseByDate/{Date}',[DepenseController::class,'depenseByDate']);
+Route::post('/recette',[DepenseController::class,'ajoute']);
+Route::put('/recette',[DepenseController::class,'update']);
