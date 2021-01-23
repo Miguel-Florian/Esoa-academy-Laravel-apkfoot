@@ -5,13 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Depense;
 use Illuminate\Http\Request;
 use App\Http\Resources\DepenseResource;
+use PDO;
 
 
 class DepenseController extends Controller
 {
     public function depense(){
+         $cle=0;
+        $db_host = "localhost";
+        $db_name = "foot";
+        $db_user = "root";
+        $db_pass = "";
+        $db = new PDO("mysql:host=$db_host:3306;dbname=$db_name", $db_user, $db_pass);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sum=$db->query("SELECT SUM(Prix) FROM depenses")->fetch();
+        echo('La dépense totale est de: '.$sum[$cle]." Fcfa\n ");
         return DepenseResource::collection(Depense::all());
     }
+
     public function depenseByDate(Request $request ){
         return DepenseResource::collection(Depense::where("date", $request['Date'])->get());
     }
