@@ -33,8 +33,8 @@ class RecetteController extends Controller
         $db_pass = "";
         $db = new PDO("mysql:host=$db_host:3306;dbname=$db_name", $db_user, $db_pass);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sum=$db->query("SELECT SUM(Prix) FROM recettes")->fetch();
-        echo('La recette du '.$request['Date'].' est de: '.$sum[$cle]." Fcfa\n ");
+        $sum=$db->query("SELECT SUM(Prix) FROM recettes where date='$request[Date]' ")->fetch();
+        echo('La dépense totale est de: '.$sum[$cle]." Fcfa\n ");
         return RecetteResource::collection(Recette::where("date", $request['Date'])->get());
 
 
