@@ -1,5 +1,5 @@
 
-- Instrution 
+1-) Instrution installation
 
 * tu devrais partir de master
  # git checkout master 
@@ -10,8 +10,7 @@
 * tu fais les migrations
  # php artisan migrate
 
-- quand tu auras fait ça tu peux maintenant commencer le code
-à chaque fois que tu veux ajouter une classe  tu fais les étapes suivantes
+2-)  étapes à suivre pour ajouter une resource
 
 * crée un model et sa migration
  # php artisan make:model Recette -m
@@ -24,4 +23,4 @@
  # php artisan make:controller API/RecetteController
 * crée la route dans le fichier route/api.php
 
-sert toi du contenu des controllers existantes pour faire les autres
+sert toi du contenu des controlleurs existants pour faire les autres
