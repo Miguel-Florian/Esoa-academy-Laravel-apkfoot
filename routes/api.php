@@ -27,5 +27,5 @@ Route::get('infos', function (Request $request) {
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
-Route::apiResource('recettes', RecetteController::class)->middleware('auth:api');
-Route::apiResource('depenses', DepenseController::class)->middleware('auth:api');
+Route::apiResource('recettes', RecetteController::class);//->middleware('auth:api');
+Route::apiResource('depenses', DepenseController::class);//->middleware('auth:api');
