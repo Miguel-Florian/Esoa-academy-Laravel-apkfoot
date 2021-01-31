@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\RecetteController;
 use App\Http\Controllers\API\DepenseController;
+use App\Http\Controller\API\SessionController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,3 +30,4 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::apiResource('recettes', RecetteController::class);//->middleware('auth:api');
 Route::apiResource('depenses', DepenseController::class);//->middleware('auth:api');
+Route::apiResource('sessions',SessionController::class);
