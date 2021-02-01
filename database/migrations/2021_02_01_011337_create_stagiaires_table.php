@@ -18,6 +18,7 @@ class CreateStagiairesTable extends Migration
             $table->integer("id_user");
             $table->string("nom");
             $table->string("prenom");
+            $table->string('email')->unique()->nullable();
             $table->string("adresse");
             $table->timestamps();
         });
