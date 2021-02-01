@@ -31,3 +31,4 @@ Route::post('login', [AuthController::class, 'login']);
 Route::apiResource('recettes', RecetteController::class)->middleware('auth:api');
 Route::apiResource('depenses', DepenseController::class)->middleware('auth:api');
 Route::apiResource('sessions',SessionController::class)->middleware('auth:api');
+Route::apiResource('payements',PayementController::class)->middleware('auth:api');
