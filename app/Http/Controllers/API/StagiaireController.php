@@ -34,6 +34,7 @@ class StagiaireController extends Controller
             'id_user'=>'required',
             'nom'=>'required|max:255',
             'prenom'=>'required|max:255',
+            'email'=>'required|email',
             'adresse'=>'required|max:255',
         ]);
         if($validator->fails())
