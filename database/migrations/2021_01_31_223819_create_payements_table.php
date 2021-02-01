@@ -15,8 +15,8 @@ class CreatePayementsTable extends Migration
     {
         Schema::create('payements', function (Blueprint $table) {
             $table->id();
-            $table->int("id_session");
-            $table->int("id_stagiaire");
+            $table->integer("id_session");
+            $table->integer("id_stagiaire");
             $table->Date("date_payement");
             $table->float("montant");
             $table->timestamps();
