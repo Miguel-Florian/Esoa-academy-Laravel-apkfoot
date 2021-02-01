@@ -33,3 +33,5 @@ Route::apiResource('depenses', DepenseController::class)->middleware('auth:api')
 Route::apiResource('sessions',SessionController::class)->middleware('auth:api');
 Route::apiResource('payements',PayementController::class)->middleware('auth:api');
 Route::apiResource('tuteurs',TuteurController::class)->middleware('auth:api');
+Route::apiResource('instructeurs',InstructeurController::class)->middleware('auth:api');
+Route::apiResource('categories',CategorieController::class)->middleware('auth:api');
