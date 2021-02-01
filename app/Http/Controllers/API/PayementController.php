@@ -52,7 +52,7 @@ class PayementController extends Controller
      */
     public function show(Payement $payement)
     {
-        return response(['payements'=>new PayementResource($payement),'message'=>'Créé avec succès'],200);
+        return response(['payements'=>new PayementResource($payement),'message'=>'Récupéré avec succès'],200);
     }
 
     /**
