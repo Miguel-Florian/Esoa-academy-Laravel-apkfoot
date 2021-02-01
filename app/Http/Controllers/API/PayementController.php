@@ -29,40 +29,54 @@ class PayementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->all();
+        $validator=Validator::make($data,[
+            'id_session'=>'required',
+            'id_stagiaire'=>'required',
+            'date_payement'=>'required|date',
+            'montant'=>'required'
+        ]);
+        if($validator->fails())
+        {
+            return response(['error'=>$validator->errors(),'Erreur de validation']);
+        }
+        $payement=Payement::create($data);
+        return response(['payements'=>new PayementResource($payement),'message'=>'Créé avec succès'],200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param \App\Models\Payement $payement
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Payement $payement)
     {
-        //
+        return response(['payements'=>new PayementResource($payement),'message'=>'Créé avec succès'],200);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Payement $payement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Payement $payement)
     {
-        //
+        $payement->update($request->all());
+        return response(['payements'=>new PayementResource($payement),'message'=>'Mis à jour avec succès'],200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param \App\Models\Payement $payement
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Payement $payement)
     {
-        //
+        $payement->delete();
+        return response(["message"=>"Suppression"]);
     }
 }
