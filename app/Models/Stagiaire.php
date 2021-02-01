@@ -15,6 +15,7 @@ class Stagiaire extends Model
         'id_user',
         'nom',
         'prenom',
+        'email',
         'adresse',
     ];
 }
