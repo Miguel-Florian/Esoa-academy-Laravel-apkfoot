@@ -6,6 +6,12 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\RecetteController;
 use App\Http\Controllers\API\DepenseController;
 use App\Http\Controller\API\SessionController;
+use App\Http\Controller\API\PayementController;
+use App\Http\Controller\API\TuteurController;
+use App\Http\Controller\API\InstructeurController;
+use App\Http\Controller\API\CategorieController;
+use App\Http\Controller\API\Type_RecetteController;
+use App\Http\Controller\API\Type_DepenseController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
