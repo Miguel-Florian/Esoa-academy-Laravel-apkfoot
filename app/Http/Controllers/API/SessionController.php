@@ -8,7 +8,7 @@ use App\Models\Session;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\SessionResource;
 
-class DepenseController extends Controller
+class SessionController extends Controller
 {
       /**
      * Display a listing of the resource.
